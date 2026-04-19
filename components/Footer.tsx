@@ -94,7 +94,9 @@ export default function Footer() {
         </div>
 
         {/* LINKS */}
+        {/* LINKS */}
         <div className="grid grid-cols-2 gap-10">
+          {/* QUICK LINKS */}
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-slate-300">
@@ -105,6 +107,8 @@ export default function Footer() {
                 ["CCTV Installation", "/cctv-installation"],
                 ["Contact", "/contact"],
                 ["Get Quote", "/get-quote"],
+                ["Privacy Policy", "/privacy-policy"],
+                ["Terms & Conditions", "/terms-and-conditions"],
               ].map(([name, path]) => (
                 <li key={path}>
                   <Link href={path} className="hover:text-blue-400">
@@ -115,19 +119,26 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* OTHER SERVICES */}
           <div>
-            <h4 className="font-semibold mb-4">Information</h4>
-            <div className="flex flex-col gap-2 text-sm text-slate-400">
-              <Link href="/privacy-policy" className="hover:text-blue-400">
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms-and-conditions"
-                className="hover:text-blue-400"
-              >
-                Terms &amp; Conditions
-              </Link>
-            </div>
+            <h4 className="font-semibold mb-4">Other Services</h4>
+            <ul className="space-y-2 text-slate-300">
+              {[
+                "Alarm Installation",
+                "Intercom Installation",
+                "Data Cabling, WiFi and Network",
+                "TV Antenna Installation",
+                "TV Mounting And Home Theatre",
+                "Data Cabling Installation",
+                "Electrical Test & Tag and Fire Protection",
+              ].map((service, i) => (
+                <li key={i}>
+                  <Link href="/services" className="hover:text-blue-400">
+                    {service}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
