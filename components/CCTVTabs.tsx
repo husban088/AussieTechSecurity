@@ -20,7 +20,7 @@ export default function CCTVTabs() {
 
   return (
     <section className="py-20 bg-[#efefef]" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* BUTTONS */}
         <div className="flex justify-center gap-4 mb-14 flex-wrap">
           <button
@@ -46,23 +46,23 @@ export default function CCTVTabs() {
         </div>
 
         {/* CONTENT */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* TEXT SIDE - Left on desktop, top on mobile */}
-          <div className="animate-on-scroll transition-all duration-700 opacity-0 translate-x-[-20px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* TEXT SIDE */}
+          <div className="animate-on-scroll transition-all duration-700 opacity-0 w-full min-w-0 px-2 sm:px-0">
             {activeTab === "residential" ? (
               <>
-                <h2 className="text-4xl font-bold mb-6 text-slate-900">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-900">
                   <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
                     Residential CCTV
                   </span>{" "}
                   Installation
                 </h2>
-                <p className="text-lg text-slate-600 mb-6">
+                <p className="text-base sm:text-lg text-slate-600 mb-6">
                   Keep your home, family, and valuables safe with our advanced
                   CCTV solutions designed specifically for residential
                   properties.
                 </p>
-                <ul className="space-y-3 text-slate-600">
+                <ul className="space-y-3 text-slate-600 text-sm sm:text-base">
                   <li>✅ 4K Indoor & Outdoor Cameras</li>
                   <li>✅ Full Colour at Night Options</li>
                   <li>✅ Mobile App Monitoring</li>
@@ -78,14 +78,14 @@ export default function CCTVTabs() {
               </>
             ) : (
               <>
-                <h2 className="text-4xl font-bold mb-6 text-slate-900">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-900">
                   Commercial CCTV Installation
                 </h2>
-                <p className="text-lg text-slate-600 mb-6">
+                <p className="text-base sm:text-lg text-slate-600 mb-6">
                   Secure your business with enterprise-level CCTV systems built
                   for offices, shops, warehouses, and large facilities.
                 </p>
-                <ul className="space-y-3 text-slate-600">
+                <ul className="space-y-3 text-slate-600 text-sm sm:text-base">
                   <li>✅ Multi-Camera Systems</li>
                   <li>✅ License Plate Recognition</li>
                   <li>✅ Remote Viewing Access</li>
@@ -102,9 +102,9 @@ export default function CCTVTabs() {
             )}
           </div>
 
-          {/* IMAGE SIDE with Logo on Top-Left (Half Outside) */}
-          <div className="relative animate-on-scroll transition-all duration-700 opacity-0 translate-x-[40px]">
-            <div className="relative rounded-3xl shadow-2xl overflow-visible">
+          {/* IMAGE SIDE */}
+          <div className="animate-on-scroll transition-all duration-700 opacity-0 translate-x-[30px] w-full min-w-0 flex justify-center px-2 sm:px-0">
+            <div className="relative w-full max-w-lg rounded-3xl shadow-2xl overflow-visible">
               {/* Main Image */}
               <img
                 src={
@@ -113,15 +113,15 @@ export default function CCTVTabs() {
                     : "/images/office.jpg"
                 }
                 alt="CCTV Security System"
-                className="w-full h-auto rounded-3xl"
+                className="w-full h-auto rounded-3xl object-cover"
               />
 
-              {/* Logo - Half Inside + Half Outside (Top Left Corner) */}
-              <div className="absolute -top-6 -left-6 w-28 h-28 md:w-28 md:h-28 bg-white rounded-full shadow-xl border-4 border-white overflow-hidden z-10 flex items-center justify-center">
+              {/* Logo - Half Inside + Half Outside */}
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-white rounded-full shadow-xl border-4 border-white overflow-hidden z-10 flex items-center justify-center">
                 <img
                   src="/images/bestpr.jpeg"
                   alt="Best PR Logo"
-                  className="w-24 h-24 md:w-32 md:h-32 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
             </div>

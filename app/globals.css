@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
 /* ================= FONT (GOLDMAN) ================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Goldman", system-ui;
   font-weight: 500;
