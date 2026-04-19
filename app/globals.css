@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 /* ================= FONT (GOLDMAN) ================= */
-
 body {
   font-family: "Goldman", system-ui;
   font-weight: 500;
@@ -302,8 +301,4 @@ Link[href="/get-quote"] .btn-gradient-active {
   .get__quote {
     display: none !important;
   }
-}
-
-.navbar {
-  z-index: 900 !important;
 }

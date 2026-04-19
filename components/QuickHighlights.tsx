@@ -30,10 +30,10 @@ export default function QuickHighlights() {
   return (
     <section className="bg-white text-black py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* 👇 pt-12 diya taake icon ka upper half show ho sake */}
+        {/* Outer wrapper - space for icon */}
         <div className="relative pt-12">
-          {/* 👇 Yeh style ZAROORI hai — Swiper ka overflow visible karna */}
-          <style>{`
+          {/* Scoped style - sirf is component ke liye (ye damage nahi karega) */}
+          <style jsx>{`
             .highlights-swiper,
             .highlights-swiper .swiper-wrapper {
               overflow: visible !important;
@@ -59,13 +59,20 @@ export default function QuickHighlights() {
               nextEl: ".highlights-next",
             }}
             loop={true}
-            className="highlights-swiper"
+            className="highlights-swiper !overflow-visible"
+            touchStartPreventDefault={false}
+            touchEventsTarget="wrapper"
+            simulateTouch={true}
+            allowTouchMove={true}
+            shortSwipes={true}
+            longSwipesRatio={0.5}
+            longSwipesMs={300}
+            followFinger={true}
           >
             {items.map((item, i) => (
-              <SwiperSlide key={i}>
-                {/* 👇 pt-12 card ke andar bhi taake icon + content sahi align ho */}
-                <div className="group relative bg-white border border-slate-100 rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center pt-14 h-full">
-                  {/* Icon Box — -top-9 se half bahar, half andar */}
+              <SwiperSlide key={i} className="!overflow-visible">
+                <div className="group relative overflow-visible bg-white border border-slate-100 rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center pt-14 h-full">
+                  {/* Icon - half outside */}
                   <div className="absolute -top-9 left-1/2 -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 rounded-2xl flex items-center justify-center shadow-xl border-[6px] border-white z-10">
                     <div className="text-white">{item.icon}</div>
                   </div>
@@ -77,14 +84,14 @@ export default function QuickHighlights() {
                     </h3>
                   </div>
 
-                  {/* Bottom accent */}
+                  {/* Bottom accent line */}
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-blue-600 to-slate-700 rounded-full opacity-30 group-hover:opacity-60 transition-opacity" />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - bilkul same position */}
           <div className="flex justify-center gap-6 mt-10">
             <button
               className="highlights-prev group flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 to-black text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
