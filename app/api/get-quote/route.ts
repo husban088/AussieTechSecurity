@@ -1,4 +1,3 @@
-// app/api/get-quote/route.ts
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
@@ -6,7 +5,6 @@ export async function POST(req: Request) {
     const { name, email, phone, propertyType, cameras, message } =
       await req.json();
 
-    // Basic validation
     if (!name || !email || !phone || !propertyType) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),
@@ -15,14 +13,16 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.QUOTE_EMAIL_USER,
         pass: process.env.QUOTE_EMAIL_PASS,
       },
     });
 
-    const mailOptions = {
+    await transporter.sendMail({
       from: `"Website Quote" <${process.env.QUOTE_EMAIL_USER}>`,
       to: process.env.QUOTE_EMAIL_USER,
       replyTo: email,
@@ -35,31 +35,17 @@ export async function POST(req: Request) {
         <p><b>Property Type:</b> ${propertyType}</p>
         <p><b>Number of Cameras:</b> ${cameras || "Not specified"}</p>
         <p><b>Message:</b> ${message || "No additional message"}</p>
-        <hr>
-        <p><small>Sent from Get Quote form on your website</small></p>
       `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
 
     return new Response(
-      JSON.stringify({
-        success: true,
-        message: "Quote request sent successfully",
-      }),
+      JSON.stringify({ success: true, message: "Quote sent successfully" }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("QUOTE EMAIL ERROR:", error);
-
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: "Failed to send quote request",
-        details:
-          process.env.NODE_ENV === "development" ? String(error) : undefined,
-      }),
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: "Failed to send quote" }), {
+      status: 500,
+    });
   }
 }

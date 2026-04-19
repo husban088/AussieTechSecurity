@@ -11,15 +11,16 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
-    // ⚡ PARALLEL SEND (FAST RESPONSE)
-    const mailPromise = transporter.sendMail({
+    await transporter.sendMail({
       from: `"Website Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       subject: `New Message from ${name}`,
@@ -32,14 +33,9 @@ export async function POST(req: Request) {
       `,
     });
 
-    // ⚡ response pehle bhej do (instant feel)
     return new Response(JSON.stringify({ success: true }), { status: 200 });
-
-    // email background me send hoti rahegi
-    await mailPromise;
   } catch (error) {
     console.error("EMAIL ERROR:", error);
-
     return new Response(JSON.stringify({ error: "Email failed" }), {
       status: 500,
     });

@@ -79,14 +79,11 @@ export default function GetQuote() {
     }
 
     try {
-      const res = await fetch(
-        "https://aussie-backend-production.up.railway.app/get-quote",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch("/api/get-quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       const text = await res.text();
       const data = text ? JSON.parse(text) : {};
