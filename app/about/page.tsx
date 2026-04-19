@@ -90,7 +90,7 @@ export default function About() {
               </div>
 
               {/* LOGO (HALF OUTSIDE TOP-LEFT - FIXED) */}
-              <div className="absolute -top-10 -left-10 z-50">
+              <div className="absolute -top-10 -left-10">
                 <div className="relative w-[110px] h-[110px] flex items-center justify-center">
                   {/* Rotating Text */}
                   <div className="absolute w-full h-full animate-spin-slow">

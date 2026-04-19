@@ -120,12 +120,14 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
             </Link>
 
             <a
-              href="tel:0881234567"
+              href="https://wa.me/61494149690"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onClose}
               className={`flex items-center justify-center gap-3 text-lg py-3 rounded-lg transition-all duration-300 font-medium
-              ${
-                pathname === "/contact" ? "bg-blue-600 text-white" : "btn-light"
-              }`}
+             ${
+               pathname === "/contact" ? "bg-blue-600 text-white" : "btn-light"
+             }`}
             >
               📞 Call Now: 0881 234 567
             </a>

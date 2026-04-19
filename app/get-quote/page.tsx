@@ -224,7 +224,13 @@ export default function GetQuote() {
                       name="cameras"
                       placeholder="No. of Cameras"
                       value={formData.cameras}
-                      onChange={handleChange}
+                      min={1}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        if (val === "" || parseInt(val) >= 1) {
+                          setFormData({ ...formData, cameras: val });
+                        }
+                      }}
                       className="input-style"
                     />
                   </div>
@@ -249,8 +255,8 @@ export default function GetQuote() {
                   </button>
                 </div>
 
-                <p className="text-center text-xs text-slate-500">
-                  We will contact you within 1–2 business hours
+                <p className="text-center text-sm text-slate-500">
+                  We will contact you soon thank you
                 </p>
               </form>
             </div>

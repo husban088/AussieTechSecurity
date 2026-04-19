@@ -98,17 +98,17 @@ export default function Contact() {
     {
       icon: <FaPhoneAlt className="text-white text-xl" />,
       label: "Phone",
-      value: "0881 234 567",
+      value: "+61494149690",
     },
     {
       icon: <FaEnvelope className="text-white text-xl" />,
       label: "Email",
-      value: "husbanahmad099@gmail.com",
+      value: "aussietechsecurity@gmail.com",
     },
     {
       icon: <FaMapMarkerAlt className="text-white text-xl" />,
       label: "Location",
-      value: "Adelaide, Australia",
+      value: "Adelaide, South Australia",
     },
   ];
 
@@ -256,12 +256,97 @@ export default function Contact() {
       </section>
 
       {/* MAP */}
-      <section className="h-[400px]">
-        <iframe
-          src="https://www.google.com/maps?q=Adelaide&output=embed"
-          className="w-full h-full border-0"
-          title="Adelaide Map"
-        ></iframe>
+      {/* AREAS WE SERVICE SECTION */}
+      <section className="bg-white py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* LEFT — Text Content */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue-900 mb-3">
+                Our Coverage
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
+                Areas We Service
+              </h2>
+              <div className="w-14 h-1 bg-gradient-to-r from-blue-800 to-slate-900 rounded-full mb-6" />
+              <p className="text-slate-600 text-base leading-relaxed mb-8">
+                We proudly provide professional CCTV installation, security
+                camera systems, and smart home surveillance solutions across
+                Adelaide and its surrounding suburbs.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "Elizabeth",
+                  "Gawler",
+                  "Glenelg",
+                  "West Lakes",
+                  "Hallet cove",
+                  "Morphett Vale",
+                  "Mclaren Vale",
+                  "Golden Grove",
+                ].map((area) => (
+                  <div
+                    key={area}
+                    className="flex items-center gap-3 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 hover:bg-blue-50 hover:border-blue-200 transition-all duration-200"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-blue-900 flex-shrink-0" />
+                    <span className="text-slate-700 text-lg font-medium">
+                      {area}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-slate-500 text-lg mt-6 italic">
+                Not sure if we cover your area?{" "}
+                <a
+                  href="#form"
+                  className="text-blue-900 text-lg font-semibold underline underline-offset-2 hover:text-blue-700"
+                >
+                  Contact us
+                </a>{" "}
+                and we'll confirm within minutes.
+              </p>
+            </div>
+
+            {/* RIGHT — Image */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center">
+              <div
+                className="relative rounded-3xl overflow-hidden"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)",
+                  padding: "6px",
+                }}
+              >
+                <div className="rounded-[22px] overflow-hidden">
+                  <img
+                    src="/images/map.jpeg"
+                    alt="Areas We Service in Adelaide"
+                    className="block w-full h-auto max-w-[480px] object-contain"
+                    style={{ display: "block" }}
+                    onError={(e) => {
+                      e.currentTarget.src =
+                        "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=800";
+                    }}
+                  />
+                </div>
+                {/* Luxury corner badge */}
+                <div
+                  className="absolute bottom-6 left-6 rounded-xl px-4 py-2 text-white text-sm font-semibold shadow-lg"
+                  style={{
+                    background: "rgba(15,23,42,0.85)",
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                >
+                  Adelaide & Surrounds
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );

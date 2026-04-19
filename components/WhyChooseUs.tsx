@@ -147,7 +147,7 @@ export default function WhyChooseUs() {
                 </h3>
 
                 <p className="text-slate-600 leading-relaxed text-[18px]">
-                  24/7 support and 3-year warranty on all installations.
+                  Ongoing support with a 3-year warranty on all installations.
                 </p>
 
                 {/* Round Icon - Half Inside + Half Outside + Gradient */}

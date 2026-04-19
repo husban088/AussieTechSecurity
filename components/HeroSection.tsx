@@ -14,7 +14,7 @@ export default function HeroSection() {
   ];
 
   const handleCallNow = () => {
-    window.open("https://wa.me/920494149690", "_blank");
+    window.open("https://wa.me/61494149690", "_blank");
   };
 
   return (

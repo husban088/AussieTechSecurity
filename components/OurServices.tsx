@@ -63,16 +63,13 @@ export default function OurServices() {
   return (
     <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-black animate-on-scroll">
-          Our{" "}
+        <h2 className="text-center text-black mb-14 animate-on-scroll text-2xl font-bold">
+          Professional{" "}
           <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
-            Services
-          </span>
+            CCTV Installation
+          </span>{" "}
+          • Homes & Businesses
         </h2>
-
-        <p className="text-center text-slate-500 mb-14 animate-on-scroll text-xl">
-          CCTV Installation • Home & Business
-        </p>
 
         {/* GRID */}
         <div className="grid sm:grid-cols-2 gap-10">

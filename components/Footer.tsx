@@ -196,12 +196,12 @@ export default function Footer() {
           <div>
             <Phone className="mx-auto text-blue-500" />
             <h4 className="font-semibold mt-2">Call Us</h4>
-            <p className="text-slate-400">08 8123 4567</p>
+            <p className="text-slate-400">+61494149690</p>
           </div>
           <div>
             <Mail className="mx-auto text-blue-500" />
             <h4 className="font-semibold mt-2">Email Us</h4>
-            <p className="text-slate-400">info@aussietechsecurity.com.au</p>
+            <p className="text-slate-400">aussietechsecurity@gmail.com</p>
           </div>
           <div>
             <MapPin className="mx-auto text-blue-500" />

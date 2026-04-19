@@ -83,7 +83,9 @@ export default function Navbar() {
           {/* Right Buttons */}
           <div className="flex items-center gap-x-4">
             <a
-              href="tel:0881234567"
+              href="https://wa.me/61494149690"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-orbitron hidden min-[1001px]:flex items-center gap-x-2 px-5 py-2.5 rounded-xl font-semibold btn-light"
             >
               📞 Call Now
