@@ -6,12 +6,14 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Goldman", system-ui;
   font-weight: 500;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 /* SAFE CLASS */

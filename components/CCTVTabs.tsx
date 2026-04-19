@@ -103,7 +103,7 @@ export default function CCTVTabs() {
           </div>
 
           {/* IMAGE SIDE */}
-          <div className="animate-on-scroll transition-all duration-700 opacity-0 translate-x-[30px] w-full min-w-0 flex justify-center px-2 sm:px-0">
+          <div className="animate-on-scroll transition-all duration-700 opacity-0  w-full min-w-0 flex justify-center px-2 sm:px-0">
             <div className="relative w-full max-w-lg rounded-3xl shadow-2xl overflow-visible">
               {/* Main Image */}
               <img
