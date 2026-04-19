@@ -6,6 +6,7 @@ import CCTVTabs from "@/components/CCTVTabs";
 import OurProcess from "@/components/OurProcess";
 import Benefits from "@/components/Benefits";
 import AboutContent from "@/components/AboutContent";
+import OurPartners from "@/components/OurPartners";
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <CCTVTabs />
       <OurProcess />
       <Benefits />
+      <OurPartners />
     </main>
   );
 }
