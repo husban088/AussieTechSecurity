@@ -2,18 +2,11 @@
 
 /* ================= FONT (GOLDMAN) ================= */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
 body {
   font-family: "Goldman", system-ui;
   font-weight: 500;
   font-style: normal;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /* SAFE CLASS */
@@ -25,6 +18,9 @@ body {
 /* 🔥 SMOOTH SCROLL FOR ENTIRE WEBSITE */
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
 }
 
 /* =========================
