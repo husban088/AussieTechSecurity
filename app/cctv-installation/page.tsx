@@ -22,8 +22,8 @@ export default function CctvInstallation() {
       {/* 🔥 INTRO TEXT */}
       <section className="py-14 px-6 text-center">
         <p className="max-w-3xl mx-auto text-slate-600 text-lg">
-          Professional security camera installation for homes and businesses
-          across Adelaide and surrounding areas.
+          Professional Security Camera Installation for Homes and Businesses
+          across Adelaide and surrounding areas
         </p>
       </section>
 
@@ -37,9 +37,9 @@ export default function CctvInstallation() {
             </h2>
 
             <p className="text-lg text-slate-600 mb-10">
-              We provide complete end-to-end CCTV solutions including
+              We provide complete end-to-end CCTV solutions, including
               consultation, system design, professional installation, testing,
-              and after-sales support.
+              and after installation support.
             </p>
 
             <div className="space-y-10">
@@ -50,8 +50,9 @@ export default function CctvInstallation() {
                     High-Quality Cameras
                   </h3>
                   <p className="text-slate-500">
-                    4K UHD, night vision, weatherproof cameras with wide angle
-                    coverage.
+                    4K UHD resolution, colour-at-night capability, and
+                    weatherproof cameras with wide-angle coverage for clear,
+                    reliable monitoring.
                   </p>
                 </div>
               </div>
@@ -63,8 +64,8 @@ export default function CctvInstallation() {
                     Mobile App Access
                   </h3>
                   <p className="text-slate-500">
-                    View live footage anytime, anywhere from your phone or
-                    computer.
+                    Monitor your property anytime, anywhere with live viewing
+                    and playback access from your smartphone or computer.
                   </p>
                 </div>
               </div>
@@ -76,7 +77,8 @@ export default function CctvInstallation() {
                     3-Year Warranty
                   </h3>
                   <p className="text-slate-500">
-                    Full workmanship warranty and ongoing technical support.
+                    Comprehensive workmanship warranty with ongoing technical
+                    support for complete peace of mind.
                   </p>
                 </div>
               </div>

@@ -40,21 +40,21 @@ export default function OurServices() {
     {
       title: "Home CCTV Installation",
       description:
-        "Complete home security solutions with HD cameras, night vision and mobile app access.",
+        "Premium home security systems featuring full-colour night vision, ultra-clear video quality, and seamless mobile access.",
       image: "/images/install.jpg",
       icon: <Home size={26} />,
     },
     {
       title: "Business CCTV Installation",
       description:
-        "Commercial grade security systems for offices, shops, warehouses and car parks.",
+        "High-performance commercial CCTV systems featuring full-colour night vision, crystal-clear video, and seamless remote access for complete peace of mind.",
       image: "/images/buisness.jpg",
       icon: <Building2 size={26} />,
     },
     {
       title: "Camera Setup & Configuration",
       description:
-        "Full setup including mobile app configuration, remote viewing and alerts.",
+        "Complete setup with app connection, remote viewing, and instant alerts for easy monitoring.",
       image: "/images/setup.jpeg",
       icon: <Settings size={26} />,
     },
@@ -64,7 +64,10 @@ export default function OurServices() {
     <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-black animate-on-scroll">
-          Our Services
+          Our{" "}
+          <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+            Services
+          </span>
         </h2>
 
         <p className="text-center text-slate-500 mb-14 animate-on-scroll text-xl">

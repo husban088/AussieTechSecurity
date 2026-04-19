@@ -303,3 +303,7 @@ Link[href="/get-quote"] .btn-gradient-active {
     display: none !important;
   }
 }
+
+.navbar {
+  z-index: 900 !important;
+}

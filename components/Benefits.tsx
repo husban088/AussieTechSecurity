@@ -17,7 +17,12 @@ export default function Benefits() {
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT TEXT */}
         <div>
-          <h2 className="text-4xl font-bold mb-6">Benefits of CCTV Security</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            Benefits of{" "}
+            <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+              CCTV Security
+            </span>
+          </h2>
 
           <ul className="space-y-4">
             {benefits.map((item, i) => (

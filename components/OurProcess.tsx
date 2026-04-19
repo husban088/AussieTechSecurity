@@ -27,7 +27,12 @@ export default function OurProcess() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-4xl font-bold mb-4">Our Process</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            Our{" "}
+            <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+              Process
+            </span>
+          </h2>
 
           <p className="text-slate-600 mb-10">
             From consultation to installation and ongoing support — we handle

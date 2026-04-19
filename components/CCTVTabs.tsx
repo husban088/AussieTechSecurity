@@ -57,7 +57,10 @@ export default function CCTVTabs() {
             {activeTab === "residential" ? (
               <>
                 <h2 className="text-4xl font-bold mb-6 text-slate-900 ml-10">
-                  Residential CCTV Installation
+                  <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+                    Residential CCTV
+                  </span>{" "}
+                  Installation
                 </h2>
 
                 <p className="text-lg text-slate-600 mb-6 ml-10">

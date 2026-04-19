@@ -5,31 +5,31 @@ export default function Services() {
   const services = [
     {
       title: "Home CCTV Installation",
-      desc: "Complete home security solutions with HD cameras, night vision and mobile app access.",
+      desc: "Reliable home security with colour night vision cameras, HD recording, and mobile app control.",
       image: "/images/install.jpg",
       icon: <Home size={26} />,
     },
     {
       title: "Business CCTV Installation",
-      desc: "Commercial grade security systems for offices, shops, warehouses and car parks.",
+      desc: "Advanced commercial security solutions featuring full-colour night vision, high-definition monitoring, and smart remote access for all business environments.",
       image: "/images/buisness.jpg",
       icon: <Building2 size={26} />,
     },
     {
       title: "Camera Setup & Configuration",
-      desc: "Full setup including mobile app configuration, remote viewing and alerts.",
+      desc: "Complete setup with app connection, remote viewing, and instant alerts for easy monitoring.",
       image: "/images/setup.jpeg",
       icon: <Settings size={26} />,
     },
     {
       title: "Maintenance & Repair",
-      desc: "Regular maintenance and fast repair services for CCTV systems.",
+      desc: "Reliable maintenance and fast repair services for all CCTV systems.",
       image: "/images/repair.jpeg",
       icon: <Wrench size={26} />,
     },
     {
       title: "Advanced Security Systems",
-      desc: "Smart surveillance systems with motion detection & 24/7 monitoring.",
+      desc: "High-end smart surveillance systems with motion detection, instant alerts, and advanced monitoring capabilities.",
       image: "/images/advance.jpg",
       icon: <Shield size={26} />,
     },

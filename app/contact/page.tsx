@@ -132,11 +132,9 @@ export default function Contact() {
       {/* GRADIENT SECTION */}
       <section className="py-16 bg-gradient-to-r from-blue-500 to-slate-900 text-center px-6">
         <p className="text-lg md:text-xl max-w-3xl mx-auto text-white">
-          Get in touch with our expert security team for fast support, free
-          consultation, and reliable CCTV installation solutions tailored for
-          your home or business in Adelaide.
-          <br />
-          We respond within 1-2 business hours.
+          Speak with our experienced security team for prompt support, a free
+          consultation, and tailored CCTV installation solutions designed for
+          homes and businesses across Adelaide.
         </p>
       </section>
 

@@ -6,7 +6,11 @@ export default function AboutContent() {
       {/* 🔥 INTRO */}
       <div className="px-6 text-center mb-16">
         <h1 className="relative text-4xl md:text-5xl font-bold text-black text-center">
-          About <span className="text-blue-950">Aussie</span> Tech Security
+          About{" "}
+          <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+            Aussie Tech
+          </span>{" "}
+          Security
         </h1>
 
         <p className="max-w-3xl mx-auto text-slate-600 text-lg">
@@ -29,9 +33,9 @@ export default function AboutContent() {
                 Who We Are
               </h2>
               <p className="text-slate-600 text-center leading-relaxed">
-                We are a locally owned and operated business with licensed
-                technicians focused on protecting homes, families, and
-                commercial properties in Adelaide.
+                Proudly locally owned and operated, we provide expert security
+                solutions through our team of licensed technicians—helping
+                safeguard homes and commercial properties across Adelaide.
               </p>
             </div>
 
@@ -61,7 +65,10 @@ export default function AboutContent() {
                 <li>✔ 10+ years experience</li>
                 <li>✔ Licensed & insured technicians</li>
                 <li>✔ 3-Year warranty</li>
-                <li>✔ 24/7 support</li>
+                <li>
+                  ✔Reliable service, quality workmanship, ongoing support and a
+                  3-year warranty on all installations.t
+                </li>
                 <li>✔ No hidden costs</li>
               </ul>
             </div>

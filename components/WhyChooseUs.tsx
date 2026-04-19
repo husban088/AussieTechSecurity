@@ -40,7 +40,11 @@ export default function WhyChooseUs() {
         {/* HEADING */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-            Why Choose Us
+            Why{" "}
+            <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+              Choose
+            </span>{" "}
+            Us
           </h2>
           <p className="text-slate-500 text-xl max-w-md mx-auto">
             Professional • Affordable • Reliable

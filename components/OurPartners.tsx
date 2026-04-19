@@ -28,7 +28,10 @@ const OurPartners: React.FC = () => {
         {/* Section Title */}
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight">
-            Our Partners
+            Our{" "}
+            <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
+              Partners
+            </span>
           </h2>
           <p className="mt-3 text-lg text-gray-600">
             Trusted by leading companies worldwide

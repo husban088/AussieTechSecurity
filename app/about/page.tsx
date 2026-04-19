@@ -38,9 +38,9 @@ export default function About() {
                 Who We Are
               </h2>
               <p className="text-slate-600 text-center leading-relaxed">
-                We are a locally owned and operated business with licensed
-                technicians focused on protecting homes, families, and
-                commercial properties in Adelaide.
+                Proudly locally owned and operated, we provide expert security
+                solutions through our team of licensed technicians—helping
+                safeguard homes and commercial properties across Adelaide.
               </p>
             </div>
 

@@ -24,8 +24,8 @@ export default function Footer() {
           {/* LEFT – text content */}
           <div className="trust-left">
             <div className="trust-badge-pill">
-              <ShieldCheck size={15} />
-              <span>South Australian Certified</span>
+              <ShieldCheck size={23} />
+              <span className="text-sm">South Australian Certified</span>
             </div>
 
             <h2 className="trust-heading">Licensed &amp; Police-Checked</h2>
@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="tick">✔</span>
-                Compliant with Australian Standards AS 2201
+                Compliant with Australian Standards
               </li>
             </ul>
           </div>
