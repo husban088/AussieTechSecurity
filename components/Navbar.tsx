@@ -45,6 +45,31 @@ export default function Navbar() {
      hover:after:w-full
      ${isActive(path) ? "text-blue-600 after:w-full" : "text-slate-800"}`;
 
+  // 🔥 FIXED: WhatsApp handler for worldwide
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const phoneNumber = "61494149690"; // Australia number without +
+    const message = "Hi! I need a quote for CCTV installation.";
+
+    // Detect if mobile or desktop
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Mobile: Open WhatsApp app directly
+      window.location.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        message
+      )}`;
+    } else {
+      // Desktop: Open WhatsApp Web in new tab
+      window.open(
+        `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+          message
+        )}`,
+        "_blank"
+      );
+    }
+  };
+
   return (
     <>
       <nav
@@ -85,14 +110,13 @@ export default function Navbar() {
 
           {/* Right Buttons */}
           <div className="flex items-center gap-x-4">
-            <a
-              href="https://wa.me/61494149690"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-orbitron get__contact hidden min-[1001px]:flex items-center gap-x-2 px-5 py-2.5 rounded-xl font-semibold btn-light"
+            {/* 🔥 FIXED: Call Now Button - Works Worldwide */}
+            <button
+              onClick={handleWhatsAppClick}
+              className="font-orbitron get__contact hidden min-[1001px]:flex items-center gap-x-2 px-5 py-2.5 rounded-xl font-semibold btn-light cursor-pointer"
             >
               📞 Call Now
-            </a>
+            </button>
 
             <Link
               href="/get-quote"
@@ -108,7 +132,7 @@ export default function Navbar() {
             {/* Hamburger */}
             <button
               onClick={toggleMenu}
-              className="min-[1001px]:hidden w-10 h-10 flex items-center justify-center"
+              className="min-[1001px]:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
             >
               <div className="relative w-7 h-7">
                 <span

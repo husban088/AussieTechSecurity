@@ -20,6 +20,31 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
     };
   }, [isOpen]);
 
+  // 🔥 FIXED: WhatsApp handler for worldwide
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const phoneNumber = "61494149690"; // Australia number
+    const message = "Hi! I need a quote for CCTV installation.";
+
+    // Detect if mobile or desktop
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Mobile: Open WhatsApp app directly
+      window.location.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        message
+      )}`;
+    } else {
+      // Desktop: Open WhatsApp Web in new tab
+      window.open(
+        `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+          message
+        )}`,
+        "_blank"
+      );
+    }
+  };
+
   const linkClass = (path: string) =>
     `relative hover:text-blue-600 transition-colors duration-300 text-lg font-medium
      after:content-[''] after:absolute after:left-0 after:-bottom-1
@@ -127,18 +152,16 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
               Get Free Quote
             </Link>
 
-            <a
-              href="https://wa.me/61494149690"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onClose}
-              className={`flex items-center justify-center gap-3 text-lg py-3 rounded-lg transition-all duration-300 font-medium
-             ${
-               pathname === "/contact" ? "bg-blue-600 text-white" : "btn-light"
-             }`}
+            {/* 🔥 FIXED: Call Now Button - Works Worldwide */}
+            <button
+              onClick={handleWhatsAppClick}
+              className={`flex items-center justify-center gap-3 text-lg py-3 rounded-lg transition-all duration-300 font-medium w-full cursor-pointer
+              ${
+                pathname === "/contact" ? "bg-blue-600 text-white" : "btn-light"
+              }`}
             >
               📞 Call Now: 0479 063 410
-            </a>
+            </button>
           </div>
         </div>
       </aside>
