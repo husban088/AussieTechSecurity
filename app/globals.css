@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 /* ================= FONT (GOLDMAN) ================= */
-
 body {
   font-family: "Goldman", system-ui;
   font-weight: 500;
@@ -9,7 +8,6 @@ body {
   overflow-x: hidden !important;
 }
 
-/* SAFE CLASS */
 .font-goldman {
   font-family: "Goldman", system-ui;
   font-weight: 500;
@@ -24,36 +22,31 @@ html {
 }
 
 /* =========================
-   SCROLLBAR CLEAN FIX
-   TRACK = WHITE
-   THUMB = GRADIENT
+   SCROLLBAR CLEAN FIX - MOBILE FRIENDLY
    ========================= */
 
 /* Chrome / Edge / Safari */
 ::-webkit-scrollbar {
-  width: 20rem;
+  width: 12px;
 }
 
-/* 👉 BACKGROUND TRACK (PEECHE WALI LINE) */
 ::-webkit-scrollbar-track {
-  background: #ffffff; /* PURE WHITE */
+  background: #ffffff;
 }
 
-/* 👉 SCROLL THUMB (MOVING PART) */
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #1e3a8a, #000000);
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
-/* Hover effect */
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #2563eb, #1e3a8a);
 }
 
 /* Firefox support */
 * {
-  scrollbar-width: auto;
-  scrollbar-color: #1e3a8a #000000;
+  scrollbar-width: thin;
+  scrollbar-color: #1e3a8a #ffffff;
 }
 
 /* Preloader Spin */
@@ -90,7 +83,7 @@ html {
   transform: translateX(0);
 }
 
-/* Pixel Motion Image Reveal (boxes combine jaisa effect) */
+/* Pixel Motion Image Reveal */
 @keyframes pixelReveal {
   0% {
     opacity: 0;
@@ -120,6 +113,7 @@ html {
 .stagger-3 {
   transition-delay: 300ms;
 }
+
 /* Custom font classes */
 .font-orbitron {
   font-family: "Orbitron", sans-serif;
@@ -185,107 +179,34 @@ html {
   }
 }
 
-/* 🔥 Gradient Button */
-.btn-gradient {
-  @apply bg-gradient-to-r from-blue-600 to-black text-white 
-         px-6 py-3 rounded-xl font-semibold shadow-md
-         transition-all duration-500 ease-in-out;
-}
-
-/* 🔥 Hover Reverse Gradient */
-.btn-gradient:hover {
-  @apply bg-gradient-to-r from-black to-blue-600 
-         shadow-xl scale-105;
-}
-
-.btn-light {
-  @apply bg-white text-black px-6 py-3 rounded-xl font-semibold 
-         shadow-md transition-all duration-300;
-}
-
-.btn-light:hover {
-  @apply bg-black text-white;
-}
-
-.btn-gradient {
-  @apply bg-gradient-to-r from-blue-600 to-black text-white 
-         px-6 py-3 rounded-xl font-semibold shadow-md
-         transition-all duration-500 ease-in-out 
-         relative overflow-hidden;
-}
-
-.btn-gradient::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, black, blue);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.btn-gradient:hover::after {
-  color: white;
-}
-
-/* 🔥 CLEAN INPUT (NO BORDER, NO ANIMATION) */
-.input-style {
-  @apply w-full bg-gray-100 rounded-2xl px-6 py-4 
-         text-base shadow-lg 
-         outline-none border-none;
-}
-
-/* textarea bigger */
-textarea.input-style {
-  @apply py-5;
-}
-
-/* remove ALL focus border/ring */
-.input-style:focus {
-  outline: none !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* 🔴 ERROR TEXT */
-.error-text {
-  @apply text-red-500 text-sm mt-1;
-}
-
-/* 🔵 ICON CIRCLE (BIG + PREMIUM) */
-.icon-circle {
-  @apply w-14 h-14 rounded-full flex items-center justify-center 
-         bg-gradient-to-r from-blue-600 to-black 
-         text-white text-2xl shadow-lg;
-}
-
-/* 🔥 BUTTON FIX (AUTO WIDTH) */
-.btn-gradient {
-  @apply inline-block bg-gradient-to-r from-blue-600 to-black 
-         text-white px-8 py-3 rounded-xl font-semibold 
-         shadow-md cursor-pointer;
-}
-
 /* ==================== BUTTON STYLES ==================== */
 
 /* Normal Get Quote - Dark Blue to Black */
 .btn-gradient {
-  background: linear-gradient(
-    to right,
-    #1e40af,
-    #0f172a
-  ); /* Dark Blue to Black */
+  background: linear-gradient(to right, #1e40af, #0f172a);
   color: white;
   box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Active Get Quote (on /get-quote page) - Black to Dark Blue */
+/* Active Get Quote (on /get-quote page) */
 .btn-gradient-active {
-  background: linear-gradient(
-    to right,
-    #0f172a,
-    #1e40af
-  ); /* Black to Dark Blue */
+  background: linear-gradient(to right, #0f172a, #1e40af);
   color: white;
   box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 /* Hover effect for both states */
@@ -293,15 +214,65 @@ textarea.input-style {
 .btn-gradient-active:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(30, 64, 175, 0.4);
+}
+
+.btn-light {
+  background-color: white;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
-/* Extra safety for active states */
-a[href="/get-quote"] .btn-gradient-active,
-Link[href="/get-quote"] .btn-gradient-active {
-  background: linear-gradient(to right, #0f172a, #1e40af) !important;
+.btn-light:hover {
+  background-color: black;
+  color: white;
 }
 
+/* INPUT STYLES */
+.input-style {
+  width: 100%;
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+}
+
+textarea.input-style {
+  padding: 1.25rem 1.5rem;
+}
+
+.input-style:focus {
+  outline: none !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.icon-circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #3b82f6, #000000);
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsive */
 @media only screen and (max-width: 1000px) {
   .get__quote {
     display: none !important;

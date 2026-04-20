@@ -30,9 +30,9 @@ const benefits = [
     desc: "Many insurers offer reduced premiums for verified CCTV installations.",
   },
   {
-    icon: "🌙",
-    title: "High Quality Night Vision",
-    desc: "Full-color clarity even in complete darkness with advanced IR technology.",
+    icon: "🌗",
+    title: "High Quality Day & Night Vision",
+    desc: "Crystal-clear visuals in both daylight and complete darkness with advanced imaging technology.",
   },
 ];
 
