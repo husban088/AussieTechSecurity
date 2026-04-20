@@ -1,7 +1,34 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ShieldCheck, DollarSign, Award, ArrowRight } from "lucide-react";
+import { ShieldCheck, DollarSign, Award } from "lucide-react";
+
+const cards = [
+  {
+    number: "01",
+    title: "Professional",
+    desc: "Fully licensed technicians with 10+ years of hands-on experience delivering world-class security solutions.",
+    icon: ShieldCheck,
+    accent: "from-blue-500 to-blue-900",
+    delay: "0s",
+  },
+  {
+    number: "02",
+    title: "Affordable",
+    desc: "Best prices in Adelaide with absolutely no hidden charges — transparent quotes every time.",
+    icon: DollarSign,
+    accent: "from-slate-600 to-slate-900",
+    delay: "0.15s",
+  },
+  {
+    number: "03",
+    title: "Reliable",
+    desc: "Ongoing dedicated support backed by a 3-year warranty on all installations, guaranteed.",
+    icon: Award,
+    accent: "from-blue-700 to-black",
+    delay: "0.3s",
+  },
+];
 
 export default function WhyChooseUs() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -13,199 +40,457 @@ export default function WhyChooseUs() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const elements = entry.target.querySelectorAll<HTMLElement>(
-            ".animate-card-left, .animate-card-right, .animate-camera"
-          );
-
-          elements.forEach((el) => {
+          const els = entry.target.querySelectorAll<HTMLElement>(".wcu-reveal");
+          els.forEach((el) => {
             if (entry.isIntersecting) {
-              el.classList.add("animate-in");
+              el.classList.add("wcu-visible");
             } else {
-              el.classList.remove("animate-in");
+              el.classList.remove("wcu-visible");
             }
           });
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     observer.observe(section);
-
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#efefef] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      ref={sectionRef}
+      className="wcu-section py-24 overflow-hidden relative"
+    >
+      {/* Background Texture */}
+      <div className="wcu-bg-texture" aria-hidden="true" />
+      <div className="wcu-bg-glow" aria-hidden="true" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* HEADING */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-            Why{" "}
-            <span className="bg-gradient-to-r from-blue-900 via-blue-950 to-black bg-clip-text text-transparent">
-              Choose
-            </span>{" "}
-            Us
+        <div
+          className="text-center mb-20 wcu-reveal"
+          style={{ "--d": "0s" } as React.CSSProperties}
+        >
+          <p className="wcu-eyebrow">Security Excellence Since 2013</p>
+          <h2 className="wcu-heading">
+            Why <span className="wcu-gradient-text">Choose</span> Us
           </h2>
-          <p className="text-slate-500 text-xl max-w-md mx-auto">
-            Professional • Affordable • Reliable
-          </p>
+          <div className="wcu-heading-line" />
+          <p className="wcu-subheading">Professional · Affordable · Reliable</p>
         </div>
 
-        {/* MAIN CONTAINER - Responsive + Arrows */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8">
-          {/* ===================== LEFT CARD ===================== */}
-          <div className="lg:w-1/3 w-full relative group animate-card-left">
-            <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative">
-              {/* Number Badge - Dark Blue/Black Gradient */}
-              <div className="absolute -top-5 -left-5 w-12 h-12 bg-gradient-to-br from-blue-600 to-slate-900 rounded-full flex items-center justify-center border-4 border-white shadow-md text-white text-2xl font-bold">
-                1
-              </div>
+        {/* CARDS GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          {cards.map((card, i) => {
+            const Icon = card.icon;
+            return (
+              <div
+                key={i}
+                className="wcu-card wcu-reveal"
+                style={{ "--d": card.delay } as React.CSSProperties}
+              >
+                {/* Top accent bar */}
+                <div
+                  className={`wcu-card-bar bg-gradient-to-r ${card.accent}`}
+                />
 
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3 mt-6">
-                Professional
-              </h3>
+                {/* Number watermark */}
+                <span className="wcu-watermark">{card.number}</span>
 
-              <p className="text-slate-600 leading-relaxed text-[18px]">
-                Fully licensed technicians with 10+ years experience.
-              </p>
+                {/* Icon */}
+                <div
+                  className={`wcu-icon-wrap bg-gradient-to-br ${card.accent}`}
+                >
+                  <Icon className="wcu-icon" />
+                </div>
 
-              {/* Round Icon - Half Inside + Half Outside + Gradient */}
-              <div className="absolute -bottom-6 right-6 w-20 h-20 bg-gradient-to-br from-blue-600 to-slate-900 rounded-2xl flex items-center justify-center shadow-2xl border-4 border-white rotate-[-12deg] z-10">
-                <ShieldCheck className="w-11 h-11 text-white" />
-              </div>
-            </div>
+                {/* Content */}
+                <div className="wcu-card-content">
+                  <h3 className="wcu-card-title">{card.title}</h3>
+                  <p className="wcu-card-desc">{card.desc}</p>
+                </div>
 
-            {/* Arrow from Left Card to Center (only on lg+) */}
-            <div className="hidden lg:block absolute top-1/2 -right-7 translate-y-[-50%] text-blue-600 z-20">
-              <ArrowRight className="w-8 h-8 drop-shadow-md" />
-            </div>
-          </div>
+                {/* Hover shine */}
+                <div className="wcu-shine" aria-hidden="true" />
 
-          {/* ===================== CENTER CAMERA IMAGE (UPDATED - BIGGER + LUXURY) ===================== */}
-          <div className="lg:w-1/3 w-full flex justify-center relative z-10 animate-camera">
-            <div className="relative group">
-              {/* Luxury Frame - Bigger Image + No BG Color + Premium Look */}
-              <div className="rounded-3xl overflow-hidden shadow-2xl border-[10px] border-white">
-                <img
-                  src="/images/chooseimg.jpeg"
-                  alt="Security Camera Installation"
-                  className="w-full h-auto object-contain transition-all duration-500 group-hover:brightness-110"
-                  onError={(e) => {
-                    e.currentTarget.src =
-                      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800";
-                  }}
+                {/* Bottom border glow */}
+                <div
+                  className={`wcu-card-glow bg-gradient-to-r ${card.accent}`}
                 />
               </div>
+            );
+          })}
+        </div>
 
-              {/* Shine Effect - Exactly same as before */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-700 pointer-events-none rounded-3xl"></div>
-
-              {/* Decorative border - Adjusted for new bigger frame */}
-              <div className="absolute -inset-10 rounded-[3rem] -z-10"></div>
-            </div>
-          </div>
-
-          {/* ===================== RIGHT CARDS ===================== */}
-          <div className="lg:w-1/3 w-full flex flex-col gap-10">
-            {/* Right Card 1 (Top) */}
-            <div className="relative group animate-card-right">
-              <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative">
-                {/* Number Badge - Dark Blue/Black Gradient */}
-                <div className="absolute -top-5 -left-5 w-12 h-12 bg-gradient-to-br from-blue-600 to-slate-900 rounded-full flex items-center justify-center border-4 border-white shadow-md text-white text-2xl font-bold">
-                  2
-                </div>
-
-                <h3 className="text-2xl font-semibold text-slate-900 mb-3 mt-6">
-                  Affordable
-                </h3>
-
-                <p className="text-slate-600 leading-relaxed text-[18px]">
-                  Best prices in Adelaide with no hidden charges.
-                </p>
-
-                {/* Round Icon - Half Inside + Half Outside + Gradient */}
-                <div className="absolute -bottom-6 right-6 w-20 h-20 bg-gradient-to-br from-blue-600 to-slate-900 rounded-2xl flex items-center justify-center shadow-2xl border-4 border-white rotate-[-12deg] z-10">
-                  <DollarSign className="w-11 h-11 text-white" />
-                </div>
-              </div>
-
-              {/* Arrow from Right Top Card to Center (only on lg+) */}
-              <div className="hidden lg:block absolute top-1/2 -left-7 translate-y-[-50%] text-blue-600 rotate-180 z-20">
-                <ArrowRight className="w-8 h-8 drop-shadow-md" />
-              </div>
+        {/* CENTER IMAGE SHOWCASE */}
+        <div
+          className="mt-20 wcu-reveal"
+          style={{ "--d": "0.45s" } as React.CSSProperties}
+        >
+          <div className="wcu-image-frame">
+            <div className="wcu-image-inner">
+              <img
+                src="/images/chooseimg.jpeg"
+                alt="Security Camera Installation"
+                className="wcu-image"
+                onError={(e) => {
+                  e.currentTarget.src =
+                    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200";
+                }}
+              />
+              <div className="wcu-image-overlay" />
             </div>
 
-            {/* Right Card 2 (Bottom) */}
-            <div className="relative group animate-card-right">
-              <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative">
-                {/* Number Badge - Dark Blue/Black Gradient */}
-                <div className="absolute -top-5 -left-5 w-12 h-12 bg-gradient-to-br from-blue-600 to-slate-900 rounded-full flex items-center justify-center border-4 border-white shadow-md text-white text-2xl font-bold">
-                  3
-                </div>
-
-                <h3 className="text-2xl font-semibold text-slate-900 mb-3 mt-6">
-                  Reliable
-                </h3>
-
-                <p className="text-slate-600 leading-relaxed text-[18px]">
-                  Ongoing support with a 3-year warranty on all installations.
-                </p>
-
-                {/* Round Icon - Half Inside + Half Outside + Gradient */}
-                <div className="absolute -bottom-6 right-6 w-20 h-20 bg-gradient-to-br from-blue-600 to-slate-900 rounded-2xl flex items-center justify-center shadow-2xl border-4 border-white rotate-[-12deg] z-10">
-                  <Award className="w-11 h-11 text-white" />
-                </div>
-              </div>
-
-              {/* Arrow from Right Bottom Card to Center (only on lg+) */}
-              <div className="hidden lg:block absolute top-1/2 -left-7 translate-y-[-50%] text-blue-600 rotate-180 z-20">
-                <ArrowRight className="w-8 h-8 drop-shadow-md" />
-              </div>
+            {/* Floating badges */}
+            <div className="wcu-badge wcu-badge-left">
+              <ShieldCheck className="w-5 h-5 text-blue-400" />
+              <span>10+ Years Experience</span>
             </div>
+            <div className="wcu-badge wcu-badge-right">
+              <Award className="w-5 h-5 text-blue-400" />
+              <span>3-Year Warranty</span>
+            </div>
+
+            {/* Corner accents */}
+            <div className="wcu-corner wcu-corner-tl" />
+            <div className="wcu-corner wcu-corner-tr" />
+            <div className="wcu-corner wcu-corner-bl" />
+            <div className="wcu-corner wcu-corner-br" />
           </div>
         </div>
       </div>
 
-      {/* ANIMATION CSS + Extra Styles - Same as before */}
       <style jsx>{`
-        .animate-card-left.animate-in,
-        .animate-card-right.animate-in {
-          opacity: 1;
-          transform: translateX(0);
+        /* ── Section ── */
+        .wcu-section {
+          background: #0a0f1e;
+          position: relative;
+        }
+        .wcu-bg-texture {
+          position: absolute;
+          inset: 0;
+          background-image: radial-gradient(
+            circle at 1px 1px,
+            rgba(255, 255, 255, 0.04) 1px,
+            transparent 0
+          );
+          background-size: 40px 40px;
+          z-index: 0;
+        }
+        .wcu-bg-glow {
+          position: absolute;
+          top: -200px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 800px;
+          height: 500px;
+          background: radial-gradient(
+            ellipse,
+            rgba(37, 99, 235, 0.18) 0%,
+            transparent 70%
+          );
+          z-index: 0;
+          pointer-events: none;
         }
 
-        .animate-camera.animate-in {
-          opacity: 1;
-          transform: scale(1);
+        /* ── Heading ── */
+        .wcu-eyebrow {
+          font-family: "Courier New", monospace;
+          font-size: 0.72rem;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          color: #3b82f6;
+          margin-bottom: 1rem;
+          display: block;
+        }
+        .wcu-heading {
+          font-size: clamp(2.5rem, 6vw, 4.5rem);
+          font-weight: 800;
+          color: #f1f5f9;
+          letter-spacing: -0.03em;
+          line-height: 1;
+          margin-bottom: 1.2rem;
+        }
+        .wcu-gradient-text {
+          background: linear-gradient(135deg, #60a5fa, #1d4ed8, #0f172a);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .wcu-heading-line {
+          width: 60px;
+          height: 3px;
+          background: linear-gradient(90deg, #3b82f6, #1e40af);
+          margin: 0 auto 1.2rem;
+          border-radius: 99px;
+        }
+        .wcu-subheading {
+          color: #64748b;
+          font-size: 1rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
         }
 
-        /* Default animation state */
-        .animate-card-left,
-        .animate-card-right,
-        .animate-camera {
+        /* ── Card ── */
+        .wcu-card {
+          position: relative;
+          background: linear-gradient(145deg, #111827, #0f172a);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 20px;
+          padding: 2.5rem 2rem 2.2rem;
+          overflow: hidden;
+          transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+            box-shadow 0.4s ease, border-color 0.4s ease;
+          cursor: default;
+        }
+        .wcu-card:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 30px 60px -10px rgba(37, 99, 235, 0.35),
+            0 0 0 1px rgba(96, 165, 250, 0.2);
+          border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        /* Accent top bar */
+        .wcu-card-bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          opacity: 0.9;
+        }
+
+        /* Watermark number */
+        .wcu-watermark {
+          position: absolute;
+          top: -10px;
+          right: 16px;
+          font-size: 6rem;
+          font-weight: 900;
+          color: rgba(255, 255, 255, 0.03);
+          line-height: 1;
+          pointer-events: none;
+          user-select: none;
+          font-family: "Georgia", serif;
+          transition: color 0.4s;
+        }
+        .wcu-card:hover .wcu-watermark {
+          color: rgba(96, 165, 250, 0.06);
+        }
+
+        /* Icon */
+        .wcu-icon-wrap {
+          width: 58px;
+          height: 58px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.4rem;
+          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+          transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+            box-shadow 0.4s ease;
+        }
+        .wcu-card:hover .wcu-icon-wrap {
+          transform: translateY(-4px) rotate(-6deg) scale(1.1);
+          box-shadow: 0 16px 32px rgba(37, 99, 235, 0.45);
+        }
+        .wcu-icon {
+          width: 28px;
+          height: 28px;
+          color: #fff;
+        }
+
+        /* Card content */
+        .wcu-card-content {
+          position: relative;
+          z-index: 2;
+        }
+        .wcu-card-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #f1f5f9;
+          margin-bottom: 0.75rem;
+          letter-spacing: -0.02em;
+        }
+        .wcu-card-desc {
+          font-size: 0.97rem;
+          line-height: 1.7;
+          color: #94a3b8;
+        }
+
+        /* Hover shine sweep */
+        .wcu-shine {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            105deg,
+            transparent 40%,
+            rgba(255, 255, 255, 0.04) 50%,
+            transparent 60%
+          );
+          transform: translateX(-100%);
+          transition: transform 0.6s ease;
+          pointer-events: none;
+          z-index: 1;
+        }
+        .wcu-card:hover .wcu-shine {
+          transform: translateX(100%);
+        }
+
+        /* Bottom glow line */
+        .wcu-card-glow {
+          position: absolute;
+          bottom: 0;
+          left: 20%;
+          right: 20%;
+          height: 1px;
           opacity: 0;
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: opacity 0.4s, left 0.4s, right 0.4s;
+        }
+        .wcu-card:hover .wcu-card-glow {
+          opacity: 1;
+          left: 10%;
+          right: 10%;
         }
 
-        .animate-card-left {
-          transform: translateX(-60px);
+        /* ── Image Frame ── */
+        .wcu-image-frame {
+          position: relative;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .wcu-image-inner {
+          position: relative;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8),
+            0 0 0 1px rgba(96, 165, 250, 0.1);
+        }
+        .wcu-image {
+          width: 100%;
+          height: auto;
+          display: block;
+          max-height: 480px;
+          object-fit: cover;
+          transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .wcu-image-frame:hover .wcu-image {
+          transform: scale(1.03);
+        }
+        .wcu-image-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to top,
+            rgba(10, 15, 30, 0.7) 0%,
+            transparent 50%
+          );
         }
 
-        .animate-card-right {
-          transform: translateX(60px);
+        /* Floating badges */
+        .wcu-badge {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(15, 23, 42, 0.92);
+          border: 1px solid rgba(96, 165, 250, 0.25);
+          backdrop-filter: blur(12px);
+          border-radius: 50px;
+          padding: 10px 18px;
+          font-size: 0.82rem;
+          color: #cbd5e1;
+          font-weight: 500;
+          white-space: nowrap;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+          z-index: 10;
+          animation: badgeFloat 3s ease-in-out infinite;
+        }
+        .wcu-badge-left {
+          bottom: 24px;
+          left: -20px;
+          animation-delay: 0s;
+        }
+        .wcu-badge-right {
+          bottom: 24px;
+          right: -20px;
+          animation-delay: 1.5s;
+        }
+        @media (max-width: 640px) {
+          .wcu-badge-left {
+            left: 12px;
+          }
+          .wcu-badge-right {
+            right: 12px;
+          }
+        }
+        @keyframes badgeFloat {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
         }
 
-        .animate-camera {
-          transform: scale(0.85);
+        /* Corner accents */
+        .wcu-corner {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          z-index: 5;
+          pointer-events: none;
+        }
+        .wcu-corner-tl {
+          top: -1px;
+          left: -1px;
+          border-top: 2px solid #3b82f6;
+          border-left: 2px solid #3b82f6;
+          border-radius: 24px 0 0 0;
+        }
+        .wcu-corner-tr {
+          top: -1px;
+          right: -1px;
+          border-top: 2px solid #3b82f6;
+          border-right: 2px solid #3b82f6;
+          border-radius: 0 24px 0 0;
+        }
+        .wcu-corner-bl {
+          bottom: -1px;
+          left: -1px;
+          border-bottom: 2px solid #3b82f6;
+          border-left: 2px solid #3b82f6;
+          border-radius: 0 0 0 24px;
+        }
+        .wcu-corner-br {
+          bottom: -1px;
+          right: -1px;
+          border-bottom: 2px solid #3b82f6;
+          border-right: 2px solid #3b82f6;
+          border-radius: 0 0 24px 0;
         }
 
-        /* Responsive adjustments - arrows hidden on mobile/tablet */
+        /* ── Reveal Animations ── */
+        .wcu-reveal {
+          opacity: 0;
+          transform: translateY(32px);
+          transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) var(--d, 0s),
+            transform 0.7s cubic-bezier(0.23, 1, 0.32, 1) var(--d, 0s);
+        }
+        .wcu-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 1024px) {
-          .animate-card-left,
-          .animate-card-right,
-          .animate-camera {
-            transform: none !important;
-            opacity: 1 !important;
+          .wcu-reveal {
+            opacity: 1;
+            transform: none;
           }
         }
       `}</style>

@@ -48,17 +48,17 @@ export default function OurProjects() {
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
 
+  // Handle navigation refs after Swiper is initialized
   useEffect(() => {
-    if (
-      swiperRef.current &&
-      swiperRef.current.navigation &&
-      prevRef.current &&
-      nextRef.current
-    ) {
-      swiperRef.current.navigation.prevEl = prevRef.current;
-      swiperRef.current.navigation.nextEl = nextRef.current;
-      swiperRef.current.navigation.init();
-      swiperRef.current.navigation.update();
+    if (swiperRef.current && prevRef.current && nextRef.current) {
+      const swiper = swiperRef.current;
+
+      swiper.params.navigation!.prevEl = prevRef.current;
+      swiper.params.navigation!.nextEl = nextRef.current;
+
+      swiper.navigation.destroy();
+      swiper.navigation.init();
+      swiper.navigation.update();
     }
   }, []);
 
@@ -87,21 +87,10 @@ export default function OurProjects() {
             slidesPerView={1}
             autoplay={{ delay: 3500, disableOnInteraction: false }}
             loop={true}
-            navigation={{
-              prevEl: prevRef.current,
-              nextEl: nextRef.current,
-            }}
+            observer={true}
+            observeParents={true}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
-              // Attach refs after swiper is ready
-              if (prevRef.current && nextRef.current) {
-                // @ts-ignore
-                swiper.params.navigation.prevEl = prevRef.current;
-                // @ts-ignore
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
-              }
             }}
             breakpoints={{
               480: { slidesPerView: 2 },
@@ -125,21 +114,7 @@ export default function OurProjects() {
                       }}
                     />
 
-                    {/* Shine — left se right (heere jaisi chamak) */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background:
-                          "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%)",
-                        transform: "translateX(-100%)",
-                        transition: "transform 0.7s ease",
-                      }}
-                      onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLDivElement).style.transform =
-                          "translateX(100%)";
-                      }}
-                    />
-                    {/* CSS hover shine via group */}
+                    {/* Shine Effect */}
                     <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-t-3xl">
                       <div
                         className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
@@ -152,7 +127,7 @@ export default function OurProjects() {
 
                     {/* Location badge */}
                     <div
-                      className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-white text-sm md:text-sm lg:text-lg font-semibold"
+                      className="absolute bottom-3 left-3 px-3 py-1 rounded-full text-white text-sm font-semibold"
                       style={{
                         background:
                           "linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)",
@@ -203,14 +178,15 @@ export default function OurProjects() {
             ))}
           </Swiper>
 
-          {/* ARROWS */}
+          {/* CUSTOM ARROWS - Bottom Center */}
           <div className="flex justify-center gap-4 mt-8">
             <button
               ref={prevRef}
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
+              className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer z-10"
               style={{
                 background: "linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)",
               }}
+              aria-label="Previous project"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -227,12 +203,14 @@ export default function OurProjects() {
                 />
               </svg>
             </button>
+
             <button
               ref={nextRef}
-              className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 cursor-pointer"
+              className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer z-10"
               style={{
                 background: "linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)",
               }}
+              aria-label="Next project"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +229,7 @@ export default function OurProjects() {
             </button>
           </div>
 
-          {/* VIEW ALL PROJECTS BUTTON — OurServices style */}
+          {/* VIEW ALL PROJECTS BUTTON */}
           <div className="flex justify-center mt-10">
             <Link
               href="/projects"

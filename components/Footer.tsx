@@ -197,7 +197,7 @@ export default function Footer() {
           <div>
             <Phone className="mx-auto text-blue-500" />
             <h4 className="font-semibold mt-2">Call Us</h4>
-            <p className="text-slate-400">+61494149690</p>
+            <p className="text-slate-400">0479 063 410</p>
           </div>
           <div>
             <Mail className="mx-auto text-blue-500" />

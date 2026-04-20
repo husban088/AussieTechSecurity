@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     "Professional CCTV Installation Services in Adelaide - Home & Business Security Camera Experts",
 
   icons: {
-    icon: "/images/main.png",
-    shortcut: "/images/main.png",
-    apple: "/images/main.png",
+    icon: "/images/footerlogo.png",
+    shortcut: "/images/footerlogo.png",
+    apple: "/images/footerlogo.png",
   },
 };
 
