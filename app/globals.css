@@ -278,3 +278,9 @@ textarea.input-style {
     display: none !important;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .get__contact {
+    display: none !important;
+  }
+}

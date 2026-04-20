@@ -89,7 +89,7 @@ export default function Navbar() {
               href="https://wa.me/61494149690"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-orbitron hidden min-[1001px]:flex items-center gap-x-2 px-5 py-2.5 rounded-xl font-semibold btn-light"
+              className="font-orbitron get__contact hidden min-[1001px]:flex items-center gap-x-2 px-5 py-2.5 rounded-xl font-semibold btn-light"
             >
               📞 Call Now
             </a>
