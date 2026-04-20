@@ -36,7 +36,6 @@ function useReveal(threshold = 0.12) {
 }
 
 const TRUST_PILLS = [
-  { icon: Zap, text: "Fast Response" },
   { icon: Shield, text: "No Obligation" },
   { icon: CheckCircle2, text: "Expert Advice" },
   { icon: Clock, text: "Same-Week Inst." },
@@ -224,10 +223,6 @@ export default function GetQuote() {
               />
               <div className="gq-shine" />
             </div>
-            <div className="gq-img-badge">
-              <CheckCircle2 className="w-4 h-4 text-blue-400" />
-              Free No-Obligation Quote
-            </div>
 
             {/* Decorative dots */}
             <div className="gq-dots" aria-hidden="true">
@@ -239,9 +234,9 @@ export default function GetQuote() {
             {/* Info cards stacked */}
             <div className="gq-side-info">
               {[
-                { icon: Zap, label: "Same-week installation available" },
-                { icon: Shield, label: "3-year workmanship warranty" },
-                { icon: Clock, label: "Response within 24 hours" },
+                // { icon: Zap, label: "Same-week installation available" },
+                // { icon: Shield, label: "Our team will connect with you soon." },
+                { icon: Clock, label: "Our team will connect with you soon" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="gq-info-chip">
                   <div className="gq-chip-icon">

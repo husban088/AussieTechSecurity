@@ -125,7 +125,6 @@ export default function Benefits() {
               {/* Stats row */}
               <div className="ben-stats">
                 {[
-                  { value: "500+", label: "Installs" },
                   { value: "3yr", label: "Warranty" },
                   { value: "24/7", label: "Support" },
                 ].map((s, i) => (

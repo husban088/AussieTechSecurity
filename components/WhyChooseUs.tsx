@@ -143,10 +143,10 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Floating badges */}
-            <div className="wcu-badge wcu-badge-left">
+            {/* <div className="wcu-badge wcu-badge-left">
               <ShieldCheck className="w-5 h-5 text-blue-400" />
               <span>10+ Years Experience</span>
-            </div>
+            </div> */}
             <div className="wcu-badge wcu-badge-right">
               <Award className="w-5 h-5 text-blue-400" />
               <span>3-Year Warranty</span>

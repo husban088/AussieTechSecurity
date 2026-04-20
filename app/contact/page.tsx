@@ -270,9 +270,9 @@ export default function ContactPage() {
             {/* Info chips stacked */}
             <div className="ct-side-info">
               {[
-                { icon: Zap, label: "Same-week installation available" },
-                { icon: Shield, label: "3-year workmanship warranty" },
-                { icon: Clock, label: "Response within 24 hours" },
+                // { icon: Zap, label: "Same-week installation available" },
+                // { icon: Shield, label: "3-year workmanship warranty" },
+                { icon: Clock, label: "Our team will connect with you soon" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="ct-info-chip">
                   <div className="ct-chip-icon">
