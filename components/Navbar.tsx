@@ -55,7 +55,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <img src="/images/logo.png" className="h-19 w-auto" alt="Logo" />
+            <img src="/images/logo.jpeg" className="h-16 w-auto" alt="Logo" />
           </Link>
 
           {/* Desktop Menu */}

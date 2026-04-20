@@ -95,7 +95,7 @@ export default function CctvInstallation() {
           {/* RIGHT IMAGE */}
           <div className="rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="/images/cctvinstall.jpg"
+              src="/images/cctvinstall.jpeg"
               alt="CCTV Installation"
               className="w-full h-full object-cover"
             />

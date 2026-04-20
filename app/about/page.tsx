@@ -83,7 +83,7 @@ export default function About() {
               {/* IMAGE */}
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/about1.jpg"
+                  src="/images/about.jfif"
                   alt="Aussie Tech Security Installation"
                   className="w-full h-auto object-cover"
                 />
@@ -102,7 +102,7 @@ export default function About() {
                         />
                       </defs>
                       <text
-                        fill="#1e3a8a"
+                        fill="#000"
                         fontSize="18"
                         fontWeight="700"
                         letterSpacing="1.2"
@@ -117,7 +117,7 @@ export default function About() {
                   {/* CENTER LOGO */}
                   <div className="w-18 h-18 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white z-10">
                     <img
-                      src="/images/main.png"
+                      src="/images/footerlogo.png"
                       alt="Logo"
                       className="w-full h-full object-cover"
                     />
@@ -146,7 +146,7 @@ export default function About() {
               {/* ABOUT 2 IMAGE */}
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/images/about2.jpg"
+                  src="/images/about2.jfif"
                   alt="Our CCTV Work"
                   className="w-full h-full object-cover"
                 />

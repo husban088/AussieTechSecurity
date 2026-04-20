@@ -41,21 +41,21 @@ export default function OurServices() {
       title: "Home CCTV Installation",
       description:
         "Premium home security systems featuring full-colour night vision, ultra-clear video quality, and seamless mobile access.",
-      image: "/images/install.jpg",
+      image: "/images/home.jpeg",
       icon: <Home size={26} />,
     },
     {
       title: "Business CCTV Installation",
       description:
         "High-performance commercial CCTV systems featuring full-colour night vision, crystal-clear video, and seamless remote access for complete peace of mind.",
-      image: "/images/buisness.jpg",
+      image: "/images/office.jpeg",
       icon: <Building2 size={26} />,
     },
     {
       title: "Camera Setup & Configuration",
       description:
         "Complete setup with app connection, remote viewing, and instant alerts for easy monitoring.",
-      image: "/images/setup.jpeg",
+      image: "/images/setups.jpeg",
       icon: <Settings size={26} />,
     },
   ];

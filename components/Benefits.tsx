@@ -37,7 +37,7 @@ export default function Benefits() {
         {/* RIGHT IMAGE */}
         <div className="rounded-3xl overflow-hidden shadow-2xl">
           <Image
-            src="/images/what-we-image.jpg"
+            src="/images/benifits.jfif"
             alt="CCTV Benefits"
             width={800}
             height={600}

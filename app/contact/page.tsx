@@ -198,8 +198,8 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <h2 className="text-2xl font-semibold mb-2">Send Us a Message</h2>
             <p className="text-slate-500 text-sm mb-4">
-              Fill in the form below and our team will get back to you within
-              1-2 business hours.
+              Fill in the form below and our team will get back to you as soon
+              as possible
             </p>
 
             <input

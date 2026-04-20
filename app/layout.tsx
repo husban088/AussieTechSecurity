@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import QuotePopup from "@/components/QuotePopup";
 
 export const metadata: Metadata = {
   title: "Aussie Tech Security | CCTV Installation Adelaide",
@@ -37,6 +38,7 @@ export default function RootLayout({
       </head>
 
       <body className="font-goldman min-h-full flex flex-col bg-white text-black">
+        <QuotePopup />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

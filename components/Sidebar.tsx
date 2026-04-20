@@ -53,7 +53,7 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
         <div className="p-6 flex flex-col min-h-full relative">
           {/* LOGO */}
           <div className="mb-10">
-            <img src="/images/logo.png" alt="Logo" className="h-20 w-auto" />
+            <img src="/images/logo.jpeg" alt="Logo" className="h-15 w-auto" />
           </div>
 
           {/* CLOSE BUTTON */}

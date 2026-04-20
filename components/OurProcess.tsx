@@ -67,7 +67,7 @@ export default function OurProcess() {
           {/* IMAGE 1 */}
           <div className="rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/support-image-1.jpg"
+              src="/images/prcoess.jfif"
               alt="Consultation"
               width={600}
               height={600}
@@ -79,7 +79,7 @@ export default function OurProcess() {
           {/* IMAGE 2 */}
           <div className="rounded-3xl overflow-hidden shadow-xl">
             <Image
-              src="/images/support-image-2.jpg"
+              src="/images/process2.jfif"
               alt="Installation"
               width={600}
               height={600}

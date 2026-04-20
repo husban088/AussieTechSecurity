@@ -76,19 +76,20 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Arrow from Left Card to Center (only on lg+) */}
-            <div className="hidden lg:block absolute top-1/2 -right-4 translate-y-[-50%] text-blue-600 z-20">
+            <div className="hidden lg:block absolute top-1/2 -right-7 translate-y-[-50%] text-blue-600 z-20">
               <ArrowRight className="w-8 h-8 drop-shadow-md" />
             </div>
           </div>
 
-          {/* ===================== CENTER CAMERA IMAGE ===================== */}
+          {/* ===================== CENTER CAMERA IMAGE (UPDATED - BIGGER + LUXURY) ===================== */}
           <div className="lg:w-1/3 w-full flex justify-center relative z-10 animate-camera">
             <div className="relative group">
-              <div className="bg-white p-6 rounded-3xl shadow-xl">
+              {/* Luxury Frame - Bigger Image + No BG Color + Premium Look */}
+              <div className="rounded-3xl overflow-hidden shadow-2xl border-[10px] border-white">
                 <img
-                  src="/images/cctvcamera.png"
+                  src="/images/chooseimg.jpeg"
                   alt="Security Camera Installation"
-                  className="w-full max-w-[340px] md:max-w-[400px] rounded-2xl object-cover transition-all duration-500 group-hover:brightness-110"
+                  className="w-full h-auto object-contain transition-all duration-500 group-hover:brightness-110"
                   onError={(e) => {
                     e.currentTarget.src =
                       "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800";
@@ -96,11 +97,11 @@ export default function WhyChooseUs() {
                 />
               </div>
 
-              {/* Shine Effect on Hover */}
+              {/* Shine Effect - Exactly same as before */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 translate-x-[-150%] group-hover:translate-x-[250%] transition-transform duration-700 pointer-events-none rounded-3xl"></div>
 
-              {/* Decorative dashed border (kept as original) */}
-              <div className="absolute -inset-8 border-blue-200 rounded-[3rem] -z-10"></div>
+              {/* Decorative border - Adjusted for new bigger frame */}
+              <div className="absolute -inset-10 rounded-[3rem] -z-10"></div>
             </div>
           </div>
 
@@ -129,7 +130,7 @@ export default function WhyChooseUs() {
               </div>
 
               {/* Arrow from Right Top Card to Center (only on lg+) */}
-              <div className="hidden lg:block absolute top-1/2 -left-4 translate-y-[-50%] text-blue-600 rotate-180 z-20">
+              <div className="hidden lg:block absolute top-1/2 -left-7 translate-y-[-50%] text-blue-600 rotate-180 z-20">
                 <ArrowRight className="w-8 h-8 drop-shadow-md" />
               </div>
             </div>
@@ -157,7 +158,7 @@ export default function WhyChooseUs() {
               </div>
 
               {/* Arrow from Right Bottom Card to Center (only on lg+) */}
-              <div className="hidden lg:block absolute top-1/2 -left-4 translate-y-[-50%] text-blue-600 rotate-180 z-20">
+              <div className="hidden lg:block absolute top-1/2 -left-7 translate-y-[-50%] text-blue-600 rotate-180 z-20">
                 <ArrowRight className="w-8 h-8 drop-shadow-md" />
               </div>
             </div>
@@ -165,7 +166,7 @@ export default function WhyChooseUs() {
         </div>
       </div>
 
-      {/* ANIMATION CSS + Extra Styles */}
+      {/* ANIMATION CSS + Extra Styles - Same as before */}
       <style jsx>{`
         .animate-card-left.animate-in,
         .animate-card-right.animate-in {

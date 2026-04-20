@@ -109,8 +109,8 @@ export default function CCTVTabs() {
               <img
                 src={
                   activeTab === "residential"
-                    ? "/images/home.jpg"
-                    : "/images/office.jpg"
+                    ? "/images/cctvinstall.jpeg"
+                    : "/images/office.jpeg"
                 }
                 alt="CCTV Security System"
                 className="w-full h-auto rounded-3xl object-cover"

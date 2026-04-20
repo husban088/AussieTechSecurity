@@ -6,19 +6,19 @@ export default function Services() {
     {
       title: "Home CCTV Installation",
       desc: "Reliable home security with colour night vision cameras, HD recording, and mobile app control.",
-      image: "/images/install.jpg",
+      image: "/images/home.jpeg",
       icon: <Home size={26} />,
     },
     {
       title: "Business CCTV Installation",
       desc: "Advanced commercial security solutions featuring full-colour night vision, high-definition monitoring, and smart remote access for all business environments.",
-      image: "/images/buisness.jpg",
+      image: "/images/office.jpeg",
       icon: <Building2 size={26} />,
     },
     {
       title: "Camera Setup & Configuration",
       desc: "Complete setup with app connection, remote viewing, and instant alerts for easy monitoring.",
-      image: "/images/setup.jpeg",
+      image: "/images/setups.jpeg",
       icon: <Settings size={26} />,
     },
     {
@@ -30,7 +30,7 @@ export default function Services() {
     {
       title: "Advanced Security Systems",
       desc: "High-end smart surveillance systems with motion detection, instant alerts, and advanced monitoring capabilities.",
-      image: "/images/advance.jpg",
+      image: "/images/mainbanner.jpeg",
       icon: <Shield size={26} />,
     },
   ];
