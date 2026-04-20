@@ -69,6 +69,9 @@ export default function Navbar() {
             <Link href="/services" className={linkClass("/services")}>
               Services
             </Link>
+            <Link href="/projects" className={linkClass("/projects")}>
+              Projects
+            </Link>
             <Link
               href="/cctv-installation"
               className={linkClass("/cctv-installation")}

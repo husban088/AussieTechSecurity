@@ -6,6 +6,7 @@ import CCTVTabs from "@/components/CCTVTabs";
 import OurProcess from "@/components/OurProcess";
 import Benefits from "@/components/Benefits";
 import OurPartners from "@/components/OurPartners";
+import OurProjects from "@/components/OurProjects";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <QuickHighlights />
       <WhyChooseUs />
       <OurServices />
+      <OurProjects />
       <CCTVTabs />
       <OurProcess />
       <Benefits />

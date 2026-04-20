@@ -88,6 +88,14 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
             </Link>
 
             <Link
+              href="/projects"
+              onClick={onClose}
+              className={linkClass("/projects")}
+            >
+              Projects
+            </Link>
+
+            <Link
               href="/cctv-installation"
               onClick={onClose}
               className={linkClass("/cctv-installation")}

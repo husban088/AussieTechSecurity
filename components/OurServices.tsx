@@ -92,7 +92,7 @@ export default function OurServices() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
 
                 {/* ICON */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 icon-circle w-16 h-16 bg-gradient-to-br from-blue-500 to-sky-500 rounded-full flex items-center justify-center shadow-lg ring-4 ring-white">
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 icon-circle w-16 h-16 bg-gradient-to-r from-blue-900 via-blue-950 to-black rounded-full flex items-center justify-center shadow-lg ring-4 ring-white">
                   <div className="text-white">{service.icon}</div>
                 </div>
               </div>

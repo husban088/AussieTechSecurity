@@ -104,6 +104,7 @@ export default function Footer() {
                 ["Home", "/"],
                 ["About", "/about"],
                 ["Services", "/services"],
+                ["Projects", "/projects"],
                 ["CCTV Installation", "/cctv-installation"],
                 ["Contact", "/contact"],
                 ["Get Quote", "/get-quote"],
