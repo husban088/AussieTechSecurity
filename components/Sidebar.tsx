@@ -137,7 +137,7 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
                pathname === "/contact" ? "bg-blue-600 text-white" : "btn-light"
              }`}
             >
-              📞 Call Now: 0881 234 567
+              📞 Call Now: 0479 063 410
             </a>
           </div>
         </div>

@@ -170,16 +170,26 @@ export default function Footer() {
             <p className="text-sm text-slate-400 mb-4">Follow Us</p>
             <div className="flex gap-4 text-slate-300">
               {[
-                [FaInstagram, "Instagram"],
-                [FaFacebookF, "Facebook"],
+                [
+                  FaInstagram,
+                  "Instagram",
+                  "https://www.instagram.com/aussietechsecurity/",
+                ],
+                [
+                  FaFacebookF,
+                  "Facebook",
+                  "https://www.facebook.com/61579475078763",
+                ],
                 [FaTwitter, "Twitter"],
                 [FaYoutube, "YouTube"],
                 [FaTiktok, "TikTok"],
-              ].map(([Icon, label], i) => (
+              ].map(([Icon, label, link], i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={link || "#"}
                   aria-label={label as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 border border-slate-600 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition"
                 >
                   <Icon />
