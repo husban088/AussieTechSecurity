@@ -80,7 +80,7 @@ export default function HeroSection() {
 
           {/* GET QUOTE BUTTON */}
           <a
-            href="/contact"
+            href="/get-quote"
             className="get-quote-btn w-full sm:w-auto text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white"
           >
             Get Quote
