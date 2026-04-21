@@ -5,7 +5,6 @@ import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import Link from "next/link";
 
 export default function HeroSection() {
   const slides = [
@@ -16,7 +15,7 @@ export default function HeroSection() {
 
   // 🔥 FIXED: WhatsApp handler for worldwide
   const handleCallNow = () => {
-    const phoneNumber = "61494149690";
+    const phoneNumber = "61479063410";
     const message = "Hi! I need a quote for CCTV installation.";
 
     // Detect if mobile or desktop
@@ -71,25 +70,25 @@ export default function HeroSection() {
       {/* ===== CTA SECTION BELOW BANNER ===== */}
       <div className="w-full bg-gradient-to-r from-blue-950 via-black to-blue-900 py-6 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* 🔥 FIXED: CALL NOW BUTTON - Works Worldwide */}
+          {/* CALL NOW BUTTON */}
           <button
             onClick={handleCallNow}
-            className="call-now-btn w-full sm:w-auto text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white cursor-pointer"
+            className="cursor-pointer call-now-btn w-full sm:w-auto text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white"
           >
             📞 Call Now
           </button>
 
           {/* GET QUOTE BUTTON */}
-          <Link
-            href="/get-quote"
+          <a
+            href="/contact"
             className="get-quote-btn w-full sm:w-auto text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white"
           >
             Get Quote
-          </Link>
+          </a>
         </div>
       </div>
 
-      {/* ===== BUTTON STYLES ===== */}
+      {/* ===== BUTTON STYLES (Exactly same as your first file) ===== */}
       <style jsx>{`
         /* ---- CALL NOW: pulsating white glow ---- */
         .call-now-btn {
@@ -118,7 +117,6 @@ export default function HeroSection() {
           box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.8),
             0 4px 15px rgba(0, 0, 0, 0.9);
           animation: none;
-          transform: scale(1.05);
         }
 
         /* ---- GET QUOTE: shimmer shining ---- */
@@ -160,7 +158,6 @@ export default function HeroSection() {
           color: #1e3a8a;
           box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.7),
             0 4px 15px rgba(255, 255, 255, 0.5);
-          transform: scale(1.05);
         }
 
         .get-quote-btn:hover::before {

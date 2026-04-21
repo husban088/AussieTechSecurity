@@ -23,7 +23,7 @@ export default function Sidebar({ isOpen, onClose, pathname }: SidebarProps) {
   // 🔥 FIXED: WhatsApp handler for worldwide
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const phoneNumber = "61494149690"; // Australia number
+    const phoneNumber = "61479063410"; // Australia number
     const message = "Hi! I need a quote for CCTV installation.";
 
     // Detect if mobile or desktop

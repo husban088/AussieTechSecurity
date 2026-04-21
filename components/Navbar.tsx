@@ -48,7 +48,7 @@ export default function Navbar() {
   // 🔥 FIXED: WhatsApp handler for worldwide
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const phoneNumber = "61494149690"; // Australia number without +
+    const phoneNumber = "61479063410"; // Australia number without +
     const message = "Hi! I need a quote for CCTV installation.";
 
     // Detect if mobile or desktop
